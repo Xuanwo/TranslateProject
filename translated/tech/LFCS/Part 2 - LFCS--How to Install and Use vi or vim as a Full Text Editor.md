@@ -1,21 +1,20 @@
 Translating by Xuanwo
 
-Part 2 - LFCS: How to Install and Use vi/vim as a Full Text Editor
+LFCS系列第二讲：如何安装和使用vi/m全功能文字编辑器
 ================================================================================
-A couple of months ago, the Linux Foundation launched the LFCS (Linux Foundation Certified Sysadmin) certification in order to help individuals from all over the world to verify they are capable of doing basic to intermediate system administration tasks on Linux systems: system support, first-hand troubleshooting and maintenance, plus intelligent decision-making to know when it’s time to raise issues to upper support teams.
+几个月之前，Linux基金会启动了LFCS(Linux Foundation Certified Sysadmin，Linux基金会认证系统管理员)认证来帮助遍布全世界的人们获得其在处理Linux系统管理任务上能力的认证。这些能力包括系统支持，第一手的故障诊断及维护再加上智能决策——知道何时向上游维护团队提出问题。
 
 ![Learning VI Editor in Linux](http://www.tecmint.com/wp-content/uploads/2014/10/LFCS-Part-2.png)
 
 Learning VI Editor in Linux
 
-Please take a look at the below video that explains The Linux Foundation Certification Program.
+请观看下面关于Linux基金会认证计划的演示：
 
-注：youtube 视频
-<iframe width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" src="//www.youtube.com/embed/Y29qZ71Kicg"></iframe>
+<embed src="http://static.video.qq.com/TPout.swf?vid=l0163eohhs9&auto=0" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 
-This post is Part 2 of a 10-tutorial series, here in this part, we will cover the basic file editing operations and understanding modes in vi/m editor, that are required for the LFCS certification exam.
+本文是覆盖这个参加LFCS认证考试的所必需的范围和能力的十个教程的第二讲，我们将会介绍基础文件操作并理解vi/m编辑器下的模式。
 
-### Perform Basic File Editing Operations Using vi/m ###
+### 使用vi/m进行基础文件编辑操作 ###
 
 Vi was the first full-screen text editor written for Unix. Although it was intended to be small and simple, it can be a bit challenging for people used exclusively to GUI text editors, such as NotePad++, or gedit, to name a few examples.
 
