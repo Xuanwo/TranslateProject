@@ -16,25 +16,27 @@ Learning VI Editor in Linux
 
 ### 使用vi/m进行基础文件编辑操作 ###
 
-Vi was the first full-screen text editor written for Unix. Although it was intended to be small and simple, it can be a bit challenging for people used exclusively to GUI text editors, such as NotePad++, or gedit, to name a few examples.
+Vi是第一个为Unix编写的全屏文字编辑器。尽管它致力于变得小而简单，但是对于只用过图形界面文字编辑器的人来说，比方说NotePad++或者gedit，学会它可能会是一个重大的挑战。
 
-To use Vi, we must first understand the 3 modes in which this powerful program operates, in order to begin learning later about the its powerful text-editing procedures.
+要使用Vi，我们必须首先了解这个强大的程序运行的三种模式，以便于稍后我们学习它强大的文字编辑程序。
 
-Please note that most modern Linux distributions ship with a variant of vi known as vim (“Vi improved”), which supports more features than the original vi does. For that reason, throughout this tutorial we will use vi and vim interchangeably.
+请注意，大多数现代的Linux发行版都会自带vi支持更多功能的变体——vim(“Vi improved”)。因此，在本教程中，vi和vim是可以交换的。
 
-If your distribution does not have vim installed, you can install it as follows.
+如果你的发行版没有安装vim，你可以通过下面的命令来安装它。
 
-- Ubuntu and derivatives: aptitude update && aptitude install vim
-- Red Hat-based distributions: yum update && yum install vim
-- openSUSE: zypper update && zypper install vim
+- Ubuntu和衍生版：aptitude update && aptitude install vim
+- 基于Red Hat的发行版：yum update && yum install vim
+- openSUSE：zypper update && zypper install vim
 
-### Why should I want to learn vi? ###
+### 为什么我需要学习vi？ ###
 
-There are at least 2 good reasons to learn vi.
+学习vi至少有两个好理由。
 
-1. vi is always available (no matter what distribution you’re using) since it is required by POSIX.
+1. vi总是可用的（不管你使用什么发行版），因为POSIX标准需要它。
 
 2. vi does not consume a considerable amount of system resources and allows us to perform any imaginable tasks without lifting our fingers from the keyboard.
+
+2.
 
 In addition, vi has a very extensive built-in manual, which can be launched using the :help command right after the program is started. This built-in manual contains more information than vi/m’s man page.
 
