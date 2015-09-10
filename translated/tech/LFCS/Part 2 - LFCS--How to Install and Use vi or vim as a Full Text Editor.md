@@ -34,49 +34,46 @@ Vi是第一个为Unix编写的全屏文字编辑器。尽管它致力于变得�
 
 1. vi总是可用的（不管你使用什么发行版），因为POSIX标准需要它。
 
-2. vi does not consume a considerable amount of system resources and allows us to perform any imaginable tasks without lifting our fingers from the keyboard.
+2. vi不会消耗大量系统资源，而且允许我们手指不离开键盘就执行任何可以想象到的任务。
 
-2.
-
-In addition, vi has a very extensive built-in manual, which can be launched using the :help command right after the program is started. This built-in manual contains more information than vi/m’s man page.
+除此以外，vi还有一个内容覆盖广泛的内置手册，可以在程序启动之后通过`:help`调用。这个内置的帮助手册比vi/m的man pages包含了更多信息。
 
 ![vi Man Pages](http://www.tecmint.com/wp-content/uploads/2014/10/vi-man-pages.png)
 
 vi Man Pages
 
-#### Launching vi ####
+#### 启动g vi ####
 
-To launch vi, type vi in your command prompt.
+在你的命令行中输入`vi`来启动它。
 
 ![Start vi Editor](http://www.tecmint.com/wp-content/uploads/2014/10/start-vi-editor.png)
 
-Start vi Editor
+启动vi编辑器
 
-Then press i to enter Insert mode, and you can start typing. Another way to launch vi/m is.
+然后按下`i`来进入插入模式，之后你就可以开始编辑了。另一种启动vi/m的方法是：
 
     # vi filename
 
-Which will open a new buffer (more on buffers later) named filename, which you can later save to disk.
+这将打开一个以`filename`命名的新缓存区（之后将会有更多缓存区），稍后你可以将其保存到磁盘。
 
-#### Understanding Vi modes ####
+#### 理解 Vi 的模式 ####
 
-1. In command mode, vi allows the user to navigate around the file and enter vi commands, which are brief, case-sensitive combinations of one or more letters. Almost all of them can be prefixed with a number to repeat the command that number of times.
+1. 在普通模式下，vi允许用户浏览文件并输入vi命令（简短的，一个或多个大小写敏感的字母组合）。几乎所有命令都能在前面加上一个数字来表示重复执行的次数。
 
-For example, yy (or Y) copies the entire current line, whereas 3yy (or 3Y) copies the entire current line along with the two next lines (3 lines in total). We can always enter command mode (regardless of the mode we’re working on) by pressing the Esc key. The fact that in command mode the keyboard keys are interpreted as commands instead of text tends to be confusing to beginners.
+比方说，`yy`（或`Y`)复制当前行，而`3yy`（或`3Y`）复制当前以及接下来的两行（共三行）。无论是何种模式，我们随时可以通过按下`ESC`来进入普通模式。事实上，普通模式下所有键都被解析为命令而不是文本内容让很多初学者感到困惑。
 
-2. In ex mode, we can manipulate files (including saving a current file and running outside programs). To enter this mode, we must type a colon (:) from command mode, directly followed by the name of the ex-mode command that needs to be used. After that, vi returns automatically to command mode.
+2. 在Ex模式中，我们可以操作文件（包括保存当前文件和运行外部程序）。要进入该模式，我们必须从命令模式输入一个引号`:`，然后直接我们需要使用的Ex模式命令。运行结束后，vi将会自动返回普通模式。
 
-3. In insert mode (the letter i is commonly used to enter this mode), we simply enter text. Most keystrokes result in text appearing on the screen (one important exception is the Esc key, which exits insert mode and returns to command mode).
+3. 在插入模式中（通常使用`i`来进入这个模式），我们的输入都会变成文本。大多数按键都会以文本形式出现在屏幕上（一个重要的例外是`ESC`键，退出插入模式并返回到普通模式）。
 
 ![vi Insert Mode](http://www.tecmint.com/wp-content/uploads/2014/10/vi-insert-mode.png)
 
-vi Insert Mode
+vi 插入模式
 
-#### Vi Commands ####
+#### Vi 命令 ####
 
-The following table shows a list of commonly used vi commands. File edition commands can be enforced by appending the exclamation sign to the command (for example, <b.:q! enforces quitting without saving).
+下表列出了常用的vi命令。文件编辑命令可以通过附加的惊叹号强制执行。（比如，`:q!`，不保存强行退出）
 
-注：表格
 <table cellspacing="0" border="0">
   <colgroup width="290">
   </colgroup>
@@ -84,181 +81,181 @@ The following table shows a list of commonly used vi commands. File edition comm
   </colgroup>
   <tbody>
     <tr>
-      <td bgcolor="#999999" height="19" align="LEFT" style="border: 1px solid #000000;"><b><span style="font-size: small;">&nbsp;Key command</span></b></td>
-      <td bgcolor="#999999" align="LEFT" style="border: 1px solid #000000;"><b><span style="font-size: small;">&nbsp;Description</span></b></td>
+      <td bgcolor="#999999" height="19" align="LEFT" style="border: 1px solid #000000;"><b><span style="font-size: small;">&nbsp;命令</span></b></td>
+      <td bgcolor="#999999" align="LEFT" style="border: 1px solid #000000;"><b><span style="font-size: small;">&nbsp;描述</span></b></td>
     </tr>
     <tr class="alt">
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;h or left arrow</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go one character to the left</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;h 或 左方向键</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;向左一个字符</td>
     </tr>
     <tr>
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;j or down arrow</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go down one line</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;j 或 下方向键</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;向下一行</td>
     </tr>
     <tr class="alt">
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;k or up arrow</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go up one line</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;k 或 上方向键</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;向上一行</td>
     </tr>
     <tr>
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;l (lowercase L) or right arrow</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go one character to the right</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;l (小写 L) 或 右方向键</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;向右一个字符</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;H</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go to the top of the screen</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;跳转到页面顶部</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;L</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go to the bottom of the screen</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;跳转到页面底部</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;G</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go to the end of the file</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;跳转到文件末尾</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;w</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Move one word to the right</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;把一个字符移到右边</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;b</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Move one word to the left</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;把一个字符移到左边</td>
     </tr>
     <tr>
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;0 (zero)</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go to the beginning of the current line</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;0 (零)</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;跳转到当前行开头</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;^</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go to the first nonblank character on the current line</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;跳转到当前行第一个非空字符</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;$</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go to the end of the current line</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;跳转到当前行末尾</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;Ctrl-B</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go back one screen</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;返回一屏</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;Ctrl-F</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Go forward one screen</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;前进一屏</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;i</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Insert at the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;在光标位置插入</td>
     </tr>
     <tr>
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;I (uppercase i)</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Insert at the beginning of the current line</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;I (大写 i)</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;在光标当前行开头插入</td>
     </tr>
     <tr class="alt">
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;J (uppercase j)</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Join current line with the next one (move next line up)</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;J (大写 j)</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;将下一行加入当前行 (将下一行向上移动)</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;a</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Append after the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;在当前光标位置后附加</td>
     </tr>
     <tr class="alt">
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;o (lowercase O)</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Creates a blank line after the current line</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;o (小写 O)</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;在当前行之后创建一个空行</td>
     </tr>
     <tr>
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;O (uppercase o)</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Creates a blank line before the current line</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;O (大写 o)</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;在当前行之前创建一个空行</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;r</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Replace the character at the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;替换当前光标位置的字符</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;R</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Overwrite at the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;在当前光标位置重写</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;x</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Delete the character at the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;删除当前光标位置的字符</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;X</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Delete the character immediately before (to the left) of the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;删除当前光标位置之前（左）的字符</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;dd</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Cut (for later pasting) the entire current line</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;剪切（相对后之后的粘贴）当前行</td>
     </tr>
     <tr>
       <td height="20" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;D</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Cut from the current cursor position to the end of the line (this command is equivalent to d$)</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;剪切当前光标位置到行末 (这个命令相当于 d$)</td>
     </tr>
     <tr class="alt">
       <td height="20" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;yX</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Give a movement command X, copy (yank) the appropriate number of characters, words, or lines from the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;给一个移动命令X，从当前光标位置复制对应数量字符，单词或者行</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;yy or Y</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Yank (copy) the entire current line</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;复制当前行</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;p</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Paste after (next line) the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;在当前光标位置粘贴（下一行）</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;P</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Paste before (previous line) the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;在当前光标位置粘贴（前一行）</td>
     </tr>
     <tr class="alt">
-      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;. (period)</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Repeat the last command</td>
+      <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;. (句号)</span></td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;重复最后一个命令</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;u</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Undo the last command</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;撤销最后一个命令</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;U</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Undo the last command in the last line. This will work as long as the cursor is still on the line.</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;撤销最后一行的最后一个命令。只要光标还在当前行，就会起作用。</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;n</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Find the next match in a search</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;找到下一个匹配串</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;N</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Find the previous match in a search</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;找到上一个匹配串</td>
     </tr>
     <tr>
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;:n</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Next file; when multiple files are specified for editing, this commands loads the next file.</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;下一个文件；当多个文件被指定为编辑时，这个命令将会加载下一个文件。</td>
     </tr>
     <tr class="alt">
       <td height="20" align="LEFT" style="border: 1px solid #000000;">&nbsp;:e file</td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Load file in place of the current file.</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;在当前文件位置载入文件</td>
     </tr>
     <tr>
       <td height="20" align="LEFT" style="border: 1px solid #000000;">&nbsp;:r file</td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Insert the contents of file after (next line) the current cursor position</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;插入当前光标位置（下一行）之后的文件内容</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;:q</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Quit without saving changes.</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;不保存更改退出</td>
     </tr>
     <tr>
       <td height="20" align="LEFT" style="border: 1px solid #000000;">&nbsp;:w file</td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Write the current buffer to file. To append to an existing file, use :w &gt;&gt; file.</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;将当前缓存区写入文件。 要附加到现有文件，使用 :w &gt;&gt; file。</td>
     </tr>
     <tr class="alt">
       <td height="18" align="LEFT" style="border: 1px solid #000000;"><span style="font-family: Courier New;">&nbsp;:wq</span></td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Write the contents of the current file and quit. Equivalent to x! and ZZ</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;写入当前文件内容并退出。相当于x!和ZZ</td>
     </tr>
     <tr>
       <td height="20" align="LEFT" style="border: 1px solid #000000;">&nbsp;:r! command</td>
-      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;Execute command and insert output after (next line) the current cursor position.</td>
+      <td align="LEFT" style="border: 1px solid #000000;">&nbsp;执行命令并将输出插入到当前光标位置（下一行）</td>
     </tr>
   </tbody>
 </table>
 
-#### Vi Options ####
+#### Vi 选项 ####
 
 The following options can come in handy while running vim (we need to add them in our ~/.vimrc file).
 
